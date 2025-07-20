@@ -72,7 +72,7 @@ def aix_platform():
     For binary compatibility the so-called builddate is needed.
     Again, the builddate of an AIX release is associated with bos.rte.
     AIX ABI compatibility is described  as guaranteed at: https://www.ibm.com/\
-    support/knowledgecenter/en/ssw_aix_72/install/binary_compatability.html
+    support/knowledgecenter/en/ssw_aix_72/install/binary_compatibility.html
 
     For pep425 purposes the AIX platform tag becomes:
     "aix-{:1x}{:1d}{:02d}-{:04d}-{}".format(v, r, tl, builddate, bitsize)

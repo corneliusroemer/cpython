@@ -335,7 +335,7 @@ select the root node of the project tree (labeled "iOSTestbed"), then the
 "Signing & Capabilities" tab in the details page. Select a development team
 (this will likely be your own name), and plug in a physical device to your
 macOS machine with a USB cable. You should then be able to select your physical
-device from the list of targets in the pulldown in the Xcode titlebar.
+device from the list of targets in the pull-down in the Xcode titlebar.
 
 Running specific tests
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -359,7 +359,7 @@ automatic breakpoints can be inconvenient. However, they can be disabled by
 creating a symbolic breakpoint that is triggered at the start of the test run.
 
 Select "Debug > Breakpoints > Create Symbolic Breakpoint" from the Xcode menu, and
-populate the new brewpoint with the following details:
+populate the new breakpoint with the following details:
 
 * **Name**: IgnoreSignals
 * **Symbol**: UIApplicationMain
