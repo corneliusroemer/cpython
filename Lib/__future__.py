@@ -21,7 +21,7 @@ OptionalRelease records the first release in which
 
 was accepted.
 
-In the case of MandatoryReleases that have not yet occurred,
+In the case of MandatoryRelease that have not yet occurred,
 MandatoryRelease predicts the release in which the feature will become part
 of the language.
 

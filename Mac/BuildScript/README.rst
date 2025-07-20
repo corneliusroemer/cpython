@@ -12,8 +12,8 @@ package. This format is deprecated and is no longer supported by modern
 macOS systems; it is usable on macOS 10.6 and earlier systems.
 To be usable on newer versions of macOS, the bits in the bundle package
 must be assembled in a macOS flat installer package, using current
-versions of the pkgbuild and productbuild utilities. To pass macoS
-To pass macOS Gatekeeper download quarantine, the final package must be signed
+versions of the pkgbuild and productbuild utilities. To pass macOS
+Gatekeeper download quarantine, the final package must be signed
 with a valid Apple Developer ID certificate using productsign.
 Starting with macOS 10.15 Catalina, Gatekeeper now also requires
 that installer packages are submitted to and pass Apple's automated
