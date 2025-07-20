@@ -792,7 +792,6 @@ Plus corresponds to the unary prefix plus operator in Python, but applies\n\
 the context to the result.\n\
 \n");
 
-PyDoc_STRVAR(doc_ctx_power,
 "power($self, /, a, b, modulo=None)\n--\n\n\
 Compute a**b. If 'a' is negative, then 'b' must be integral. The result\n\
 will be inexact unless 'a' is integral and the result is finite and can\n\
@@ -882,7 +881,6 @@ PyDoc_STRVAR(doc_ctx_to_integral_value,
 Round to an integer.\n\
 \n");
 
-PyDoc_STRVAR(doc_ctx_to_sci_string,
 "to_sci_string($self, x, /)\n--\n\n\
 Convert a number to a string using scientific notation.\n\
 \n");
