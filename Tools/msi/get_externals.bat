@@ -77,7 +77,7 @@ echo.
 echo.Pull all sources and binaries necessary for compiling optional extension
 echo.modules that rely on external libraries.
 echo.
-echo.The --organization option determines which github organization to download
+echo.The --organization option determines which GitHub organization to download
 echo.from, the --python option determines which Python 3.6+ interpreter to use
 echo.with PCbuild\get_external.py.
 echo.

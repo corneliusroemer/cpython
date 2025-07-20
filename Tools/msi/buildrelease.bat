@@ -238,7 +238,7 @@ echo    --skip-doc (-D)     Do not build documentation
 echo    --pgo               Specify PGO command for x64 installers
 echo    --skip-pgo          Build x64 installers without using PGO
 echo    --skip-msi          Do not build executable/MSI packages
-echo    --skip-nuget        Do not build Nuget packages
+echo    --skip-nuget        Do not build NuGet packages
 echo    --skip-zip          Do not build embeddable package
 echo    --download          Specify the full download URL for MSIs
 echo    --test              Specify the test directory to run the installer tests
@@ -251,7 +251,7 @@ echo For the --pgo option, any Python command line can be used, or 'default' to
 echo use the default task (-m test --pgo).
 echo.
 echo x86 and ARM64 builds will never use PGO. ARM64 builds will never generate
-echo embeddable or Nuget packages.
+echo embeddable or NuGet packages.
 echo.
 echo The following substitutions will be applied to the download URL:
 echo     Variable        Description         Example
