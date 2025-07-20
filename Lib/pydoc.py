@@ -442,7 +442,7 @@ def synopsis(filename, cache={}):
                                                           loader=loader)
             try:
                 module = importlib._bootstrap._load(spec)
-            except Exception:
+            except:
                 return None
             del sys.modules['__temp__']
             result = module.__doc__.splitlines()[0] if module.__doc__ else None
@@ -626,7 +626,7 @@ class HTMLRepr(Repr):
     def repr_instance(self, x, level):
         try:
             return self.escape(cram(stripid(repr(x)), self.maxstring))
-        except Exception:
+        except:
             return self.escape('<%s instance>' % x.__class__.__name__)
 
     repr_unicode = repr_string
@@ -1253,7 +1253,7 @@ class TextRepr(Repr):
     def repr_instance(self, x, level):
         try:
             return cram(stripid(repr(x)), self.maxstring)
-        except Exception:
+        except:
             return '<%s instance>' % x.__class__.__name__
 
 class TextDoc(Doc):

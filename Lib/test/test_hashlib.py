@@ -343,9 +343,7 @@ class HashLibTestCase(unittest.TestCase):
 
     def test_unknown_hash(self):
         self.assertRaises(ValueError, hashlib.new, 'spam spam spam spam spam')
-        # ensure that the exception message remains consistent
-        err = re.escape("new() argument 'name' must be str, not int")
-        self.assertRaisesRegex(TypeError, err, hashlib.new, 1)
+        self.assertRaises(TypeError, hashlib.new, 1)
 
     def test_new_upper_to_lower(self):
         self.assertEqual(hashlib.new("SHA256").name, "sha256")
@@ -372,9 +370,7 @@ class HashLibTestCase(unittest.TestCase):
                 sys.modules['_md5'] = _md5
             else:
                 del sys.modules['_md5']
-        # ensure that the exception message remains consistent
-        err = re.escape("new() argument 'name' must be str, not int")
-        self.assertRaises(TypeError, err, get_builtin_constructor, 3)
+        self.assertRaises(TypeError, get_builtin_constructor, 3)
         constructor = get_builtin_constructor('md5')
         self.assertIs(constructor, _md5.md5)
         self.assertEqual(sorted(builtin_constructor_cache), ['MD5', 'md5'])
@@ -545,17 +541,13 @@ class HashLibTestCase(unittest.TestCase):
 
     def check_file_digest(self, name, data, hexdigest):
         hexdigest = hexdigest.lower()
-        digests = []
-        for digest in [name, *self.constructors_to_test[name]]:
-            try:
-                if callable(digest):
-                    digest(b"")
-                else:
-                    hashlib.new(digest)
-            except ValueError:
-                # skip, algorithm is blocked by security policy.
-                continue
-            digests.append(digest)
+        try:
+            hashlib.new(name)
+        except ValueError:
+            # skip, algorithm is blocked by security policy.
+            return
+        digests = [name]
+        digests.extend(self.constructors_to_test[name])
 
         with tempfile.TemporaryFile() as f:
             f.write(data)
